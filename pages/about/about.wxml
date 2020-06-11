@@ -1,0 +1,18 @@
+<!--pages/about/about.wxml-->
+<view>
+	<view>1_数据绑定 </view>
+	<!-- 1:数据绑定 ：{{}} ----Mustache -->
+	<view>----------------数据绑定--------------------</view>
+	<text>Hello {{title}}</text>
+	<view>-----------------列表数据展示-------------------</view>
+	<!-- 2:列表数据展示 -->
+	<view wx:for="{{students}}" wx:key="idx"  wx:for-index="idx" wx:for-item="item">
+		{{idx}}: {{item.name}} 性别：{{item.sex}} 年龄：{{item.age}}
+	</view>
+
+  <!-- 3:事件监听 --改变data-->
+	<view>-----------------事件监听-------------------</view>
+  <button size="mini" bindtap="addNumber">+</button>
+  <text>当前计数：{{number}}</text>
+  <button size="mini" bindtap="dropNumber">-</button>
+</view>
