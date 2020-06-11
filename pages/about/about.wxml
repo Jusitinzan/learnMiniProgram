@@ -1,5 +1,6 @@
 <!--pages/about/about.wxml-->
 <view>
+	<view>初始化</view>
 	<view>1_数据绑定 </view>
 	<!-- 1:数据绑定 ：{{}} ----Mustache -->
 	<view>----------------数据绑定--------------------</view>
