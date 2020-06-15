@@ -21,6 +21,26 @@ Page({
       age: 20
     }]
   },
+  onLoad() {
+    // 页面被加载出来
+    console.log('------onLoad---')
+  },
+    // 页面显示出来时
+  onShow() {
+    console.log('------onShow---')
+  },
+    // 页面初次渲染完成时
+  onReady() {
+    console.log('------onReady---')
+  },
+    // 页面隐藏起来时
+  onHide() {
+    console.log('------onHide---')
+  },
+    // 页面卸载时
+  onUnload() {
+    console.log('------onUnload---')
+  },
 
   addNumber() {
     this.setData({
