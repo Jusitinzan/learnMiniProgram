@@ -7,13 +7,31 @@
 	<text>Hello {{title}}</text>
 	<view>-----------------列表数据展示-------------------</view>
 	<!-- 2:列表数据展示 -->
-	<view wx:for="{{students}}" wx:key="idx"  wx:for-index="idx" wx:for-item="item">
+	<view wx:for="{{students}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
 		{{idx}}: {{item.name}} 性别：{{item.sex}} 年龄：{{item.age}}
 	</view>
 
-  <!-- 3:事件监听 --改变data-->
+	<!-- 3:事件监听 --改变data-->
 	<view>-----------------事件监听-------------------</view>
-  <button size="mini" bindtap="addNumber">+</button>
-  <text>当前计数：{{number}}</text>
-  <button size="mini" bindtap="dropNumber">-</button>
+	<button size="mini" bindtap="addNumber">+</button>
+	<text>当前计数：{{number}}</text>
+	<button size="mini" bindtap="dropNumber">-</button>
+
+
+	<!-- 事件传递参数 -->
+	<view>-----------------事件传递参数-------------------</view>
+	<block wx:for="{{students}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
+		<button size="mini" bind:tap="clickMethod" data-item="{{item}}" data-index="{{index}}">{{item.name}}</button>
+	</block>
+
+
+
+	<!-- 事件冒泡和事件捕获 -->
+	<!-- bind： 一层一层传递 -->
+		<!-- catch： 一层一层传递 -->
+	<view class='view1' capture-bind:tap="handleCaptureBind1" bindtap="handleBind1">
+		<view class='view2' capture-bind:tap="handleCaptureBind2" bindtap="handleBind2">
+			<view class='view3' capture-bind:tap="handleCaptureBind3" bindtap="handleBind3"></view>
+		</view>
+	</view>
 </view>
