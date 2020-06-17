@@ -1,6 +1,10 @@
 {
   "usingComponents": {
-
+    "banner": "../../component/banner/banner",
+    "style": "../../component/my-style/my-style",
+    "my-title": "../../component/my-title/my-title",
+    "my-event":"../../component/my-event/my-event",
+    "my-sel":"../../component/my-sel/my-sel"
   },
   "navigationBarTitleText": "个人中心"
 }

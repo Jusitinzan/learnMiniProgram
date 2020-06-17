@@ -77,7 +77,24 @@ Page({
   },
   handleBind3() {
     console.log('-----handleBind3')
-  }
+  },
 
+
+  handleAddmethod(event) {
+    console.log('++++++', event)
+  },
+
+
+  editNumber() {
+    // 获取组件对象
+    var select = this.selectComponent('.select');
+    console.log('--------', select)
+    // 通过setData修改组件数据
+    // select.setData({
+    //   number: select.data.number + 1
+    // })
+
+    select.editNumber(2);
+  }
 
 })

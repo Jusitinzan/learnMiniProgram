@@ -1,0 +1,4 @@
+/* component/banner/banner.wxss */
+.title{
+  font-size: 20px;
+}

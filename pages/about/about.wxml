@@ -1,37 +1,27 @@
 <!--pages/about/about.wxml-->
 <view>
-	<view>初始化</view>
-	<view>1_数据绑定 </view>
-	<!-- 1:数据绑定 ：{{}} ----Mustache -->
-	<view>----------------数据绑定--------------------</view>
-	<text>Hello {{title}}</text>
-	<view>-----------------列表数据展示-------------------</view>
-	<!-- 2:列表数据展示 -->
-	<view wx:for="{{students}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
-		{{idx}}: {{item.name}} 性别：{{item.sex}} 年龄：{{item.age}}
+
+	<!-- 自定义组件的基本使用 -->
+	<banner />
+	<!-- 自定义组件样式-->
+	<view class="title">-----------------自定义组件样式-------------------</view>
+	<style />
+
+
+	<view>-----------------给自定义组件传递数据-------------------</view>
+	<my-title title-class="red" title='呵呵呵'/>
+	<my-title title-class="green" title='哈哈哈'/>
+	<my-title title-class="orange" />
+
+
+
+	<view>-------组件向外传递事件-------</view>
+	<my-event bind:handleAdd="handleAddmethod"/>
+	{{number}}
+
+
+
+	<view>-----直接选中组件修改数据/调用方法------</view>
+	<button bind:tap="editNumber">EDIT</button>
+	<my-sel class="select"/>
 	</view>
-
-	<!-- 3:事件监听 --改变data-->
-	<view>-----------------事件监听-------------------</view>
-	<button size="mini" bindtap="addNumber">+</button>
-	<text>当前计数：{{number}}</text>
-	<button size="mini" bindtap="dropNumber">-</button>
-
-
-	<!-- 事件传递参数 -->
-	<view>-----------------事件传递参数-------------------</view>
-	<block wx:for="{{students}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
-		<button size="mini" bind:tap="clickMethod" data-item="{{item}}" data-index="{{index}}">{{item.name}}</button>
-	</block>
-
-
-
-	<!-- 事件冒泡和事件捕获 -->
-	<!-- bind： 一层一层传递 -->
-		<!-- catch： 一层一层传递 -->
-	<view class='view1' capture-bind:tap="handleCaptureBind1" bindtap="handleBind1">
-		<view class='view2' capture-bind:tap="handleCaptureBind2" bindtap="handleBind2">
-			<view class='view3' capture-bind:tap="handleCaptureBind3" bindtap="handleBind3"></view>
-		</view>
-	</view>
-</view>

@@ -1,0 +1,3 @@
+<!--component/my-event/my-event.wxml-->
+<text>component/my-event/my-event.wxml</text>
+<button bind:tap="handleAdd">+</button>

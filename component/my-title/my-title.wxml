@@ -1,0 +1,4 @@
+<!--component/my-title/my-title.wxml-->
+<view class="title-class">
+	{{title}}
+</view>
